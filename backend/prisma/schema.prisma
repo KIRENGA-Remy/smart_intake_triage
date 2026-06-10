@@ -1,0 +1,53 @@
+// Triage rows and RAG vectors live in ONE Postgres instance via pgvector.
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ----------1. Smart Intake Triage ----------
+model Ticket {
+  id             String   @id @default(cuid())
+  rawText        String   @db.Text
+  category       String
+  priority       String
+  summary        String   @db.Text
+  sentiment      String
+  affectedModule String
+  suggestedReply String   @db.Text
+  confidence     Float
+  needsReview    Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  @@index([category])
+  @@index([priority])
+  @@map("tickets")
+}
+
+// ---------- 2. Grounded Knowledge Assistant (RAG) ----------
+model Document {
+  id        String   @id @default(cuid())
+  title     String
+  source    String
+  createdAt DateTime @default(now())
+  chunks    Chunk[]
+
+  @@map("documents")
+}
+
+model Chunk {
+  id         String   @id @default(cuid())
+  documentId String
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  position   Int
+  content    String   @db.Text
+  embedding  Unsupported("vector(768)")?
+
+  @@map("chunks")
+}
