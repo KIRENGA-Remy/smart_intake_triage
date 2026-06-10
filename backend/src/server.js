@@ -8,7 +8,9 @@ const askRouter = require('./routes/ask.js');
 
 const app = express();
 
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }));
 app.use(express.json({ limit: "1mb" }));
+
 app.get("/health", (_req, res) => res.json({ ok: true }));
 app.use("/api/triage", triageRouter);
 app.use("/api/ingest", ingestRouter);

@@ -15,11 +15,12 @@ Rules:
 - summary: one neutral sentence, no PII (no names, emails, phone numbers).
 - suggestedReply: a short, professional first response the support team could send.
 - confidence: your confidence in the classification, 0 to 1.
-Output ONLY the JSON object.`; 
+Output ONLY the JSON object.`;
 
 async function classify(text) {
-  const raw = await chatJSON({ system: SYSTEM, user: text, schema: TriageJsonSchema });
-  const parsed = TriageSchema.safeParse(JSON.parse(raw));
+  const result = await chatJSON({ system: SYSTEM, user: text, schema: TriageJsonSchema });
+  const obj = typeof result === "string" ? JSON.parse(result) : result;
+  const parsed = TriageSchema.safeParse(obj);
   return parsed.success ? parsed.data : null;
 }
 
