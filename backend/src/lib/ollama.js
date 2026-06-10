@@ -12,7 +12,7 @@ async function chatJSON({ system, user, schema, temperature = 0 }) {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
 
     const res = await fetch(`${OLLAMA_URL}/api/chat`, {
       method: "POST",
@@ -70,7 +70,7 @@ async function chatText({ system, user, temperature = 0.1 }) {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 30000);
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
 
     const res = await fetch(`${OLLAMA_URL}/api/chat`, {
       method: "POST",

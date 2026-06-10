@@ -10,6 +10,7 @@ const CATEGORIES = [
   "Environmental Compliance", // Water treatment, dust control, waste management
   "Staff & Training",         // Worker availability, skill gaps, shift scheduling
   "Billing & Licensing",      // Invoicing, permits, royalty payments
+  "Payroll & Finance",        // Wage disputes, overtime, cost tracking
   "Feature Request",          // New functionality request
   "Account & Access",         // Login issues, permission problems
   "Other",

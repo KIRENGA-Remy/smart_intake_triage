@@ -6,7 +6,8 @@
     "dev": "nodemon --watch src/server.js",
     "start": "node src/server.js",
     "db:generate": "prisma generate",
-    "db:push": "prisma db push"
+    "db:push": "prisma db push",
+    "seed": "node scripts/seed-kb.js"
   },
   "keywords": [],
   "author": "",
