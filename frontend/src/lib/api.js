@@ -13,7 +13,7 @@ async function jsonOrThrow(res) {
   return res.json();
 }
 
-/** UC1: classify + store one inbound message. */
+/** UC1: classify + store one inbound message. Returns the stored ticket. */
 export async function createTriage(text) {
   const res = await fetch(`${BASE}/api/triage`, {
     method: "POST",
@@ -33,7 +33,7 @@ export async function listTickets({ category, priority } = {}) {
   return jsonOrThrow(res);
 }
 
-/** UC2: ask a grounded question. */
+/** UC2: grounded question answering. */
 export async function ask(question) {
   const res = await fetch(`${BASE}/api/ask`, {
     method: "POST",
