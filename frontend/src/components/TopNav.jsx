@@ -9,9 +9,8 @@ export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
     <header className="topnav">
       <div className="nav-left">
         <a href="#" className="nav-logo" onClick={(e) => e.preventDefault()}>
-          <div className="nav-logo-icon">⛏</div>
           <div className="nav-logo-text">
-            Mine<span>Tech</span>
+            Mine<span>AI</span>
           </div>
         </a>
       </div>

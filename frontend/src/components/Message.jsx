@@ -110,7 +110,7 @@ export default function Message({ m }) {
           {m.kind === "intake" && m.triage && <TriageCard t={m.triage} />}
           {m.kind === "knowledge" && <KnowledgeAnswer m={m} />}
           {m.kind === "error" && <div className="note-card err">{m.text}</div>}
-          <div className="msg-meta">MineTech AI</div>
+          <div className="msg-meta">MineAI</div>
         </div>
       </div>
     </div>

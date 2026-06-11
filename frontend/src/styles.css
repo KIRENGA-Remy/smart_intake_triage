@@ -1,6 +1,5 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ===== THEME TOKENS (MineTech: coffee + gold) ===== */
 :root, [data-theme="dark"] {
   --bg-main: #14100D;
   --bg-sidebar: #1A1511;
@@ -60,11 +59,6 @@ html, body, #root {
 .nav-right { justify-content: flex-end; }
 .nav-center { flex: 1; display: flex; justify-content: center; }
 .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
-.nav-logo-icon {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  display: flex; align-items: center; justify-content: center; font-size: 16px; color: #1A1511;
-}
 .nav-logo-text { font-family: "Poppins", sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.3px; color: var(--text-primary); }
 .nav-logo-text span { color: var(--accent); }
 
@@ -154,11 +148,6 @@ html, body, #root {
 
 /* Welcome */
 .welcome { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; max-width: 680px; width: 100%; }
-.welcome-icon {
-  width: 64px; height: 64px; border-radius: 18px; margin-bottom: 20px;
-  background: linear-gradient(135deg, rgba(201,168,106,0.22), rgba(156,123,69,0.18));
-  border: 1px solid rgba(201,168,106,0.35); display: flex; align-items: center; justify-content: center; font-size: 28px;
-}
 .welcome h1 {
   font-family: "Poppins", sans-serif; font-size: 30px; font-weight: 700; margin-bottom: 10px;
   background: linear-gradient(135deg, var(--text-primary) 45%, var(--accent));

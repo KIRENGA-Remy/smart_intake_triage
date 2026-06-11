@@ -42,7 +42,7 @@ export default function Composer({ mode, onSend, sending }) {
         </button>
       </div>
       <div className="input-hint">
-        MineTech AI runs a self-hosted model and can make mistakes. Verify critical operational
+        MineAI runs a self-hosted model and can make mistakes. Verify critical operational
         decisions with your team.
       </div>
     </div>

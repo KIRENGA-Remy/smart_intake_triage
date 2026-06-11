@@ -56,7 +56,7 @@ export const MODE_COPY = {
 };
 
 // ===== Session storage (localStorage) =====
-const KEY = "minetech_sessions_v1";
+const KEY = "mineai_sessions_v1";
 
 export function uid() {
   return Math.random().toString(36).slice(2, 9) + Date.now().toString(36);

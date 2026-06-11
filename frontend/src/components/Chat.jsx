@@ -16,7 +16,6 @@ export default function Chat({ mode, messages, sending, onStarter }) {
     <div className="chat-area">
       {empty ? (
         <div className="welcome">
-          <div className="welcome-icon">⛏</div>
           <h1>{copy.title}</h1>
           <p>{copy.subtitle}</p>
           <div className="suggestion-grid">
