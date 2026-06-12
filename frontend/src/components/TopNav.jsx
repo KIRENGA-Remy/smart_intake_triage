@@ -6,23 +6,27 @@ const TABS = [
 
 export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
   return (
-    <header className="topnav">
-      <div className="nav-left">
-        <a href="#" className="nav-logo" onClick={(e) => e.preventDefault()}>
-          <div className="nav-logo-text">
-            Mine<span>AI</span>
+    <header className="relative z-[100] flex h-14 flex-shrink-0 items-center justify-between border-b border-line bg-[var(--nav-bg)] px-5 backdrop-blur-lg">
+      <div className="flex min-w-[120px] flex-shrink-0 items-center gap-2.5 md:min-w-[160px]">
+        <a href="#" onClick={(e) => e.preventDefault()} className="no-underline">
+          <div className="font-display text-[17px] font-extrabold tracking-[0.3px] text-tprimary">
+            Mine<span className="text-accent">AI</span>
           </div>
         </a>
       </div>
 
-      <div className="nav-center">
-        <nav className="nav-links">
+      <div className="flex flex-1 justify-center">
+        <nav className="flex gap-1 sm:gap-2">
           {TABS.map((t) => (
             <button
               key={t.id}
-              className={`nav-link ${tab === t.id ? "active" : ""}`}
-              aria-current={tab === t.id ? "page" : undefined}
               onClick={() => onTab(t.id)}
+              aria-current={tab === t.id ? "page" : undefined}
+              className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-[13.5px] font-semibold transition-colors sm:px-4 ${
+                tab === t.id
+                  ? "bg-[rgba(201,168,106,0.14)] text-accent"
+                  : "text-tsecondary hover:bg-[rgba(201,168,106,0.10)] hover:text-tprimary"
+              }`}
             >
               {t.label}
             </button>
@@ -30,18 +34,22 @@ export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
         </nav>
       </div>
 
-      <div className="nav-right">
+      <div className="flex min-w-[120px] flex-shrink-0 items-center justify-end gap-2.5 md:min-w-[160px]">
         <button
-          className="icon-btn"
           onClick={onToggleTheme}
           title="Toggle dark / light mode"
           aria-label="Toggle theme"
+          className="flex h-9 w-9 items-center justify-center rounded-[9px] border border-line bg-transparent text-[15px] text-tsecondary transition-colors hover:border-linestrong hover:bg-inputbg hover:text-tprimary"
         >
           {theme === "dark" ? "🌙" : "☀️"}
         </button>
-        <div className="user-pill">
-          <div className="user-avatar">MO</div>
-          <span className="user-pill-name">Mine Operator</span>
+        <div className="flex items-center gap-2 rounded-full border border-line py-[5px] pl-1.5 pr-3">
+          <div className="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--accent2),var(--accent))] text-[11px] font-bold text-white">
+            MO
+          </div>
+          <span className="hidden text-[13px] font-semibold text-tprimary sm:block">
+            Mine Operator
+          </span>
         </div>
       </div>
     </header>

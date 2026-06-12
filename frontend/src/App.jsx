@@ -14,13 +14,11 @@ export default function App() {
   const [currentId, setCurrentId] = useState(null);
   const [sending, setSending] = useState(false);
 
-  // Theme: reflect on <html> and persist.
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // Persist sessions whenever they change.
   useEffect(() => {
     saveSessions(sessions);
   }, [sessions]);
@@ -46,7 +44,6 @@ export default function App() {
     const kind = tab === "knowledge" ? "knowledge" : "intake";
     const userMsg = { id: uid(), role: "user", kind, text };
 
-    // Ensure a session exists.
     let sessionId = currentId;
     const isNew = !sessionId;
     if (isNew) sessionId = uid();
@@ -116,33 +113,28 @@ export default function App() {
   const chatMode = tab === "knowledge" ? "knowledge" : "intake";
 
   return (
-    <div className="app">
+    <div className="flex h-screen flex-col">
       <TopNav
         tab={tab}
         onTab={setTab}
         theme={theme}
         onToggleTheme={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
       />
-      <div className="body-area">
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar
           sessions={sessions}
           currentId={currentId}
           onSelect={selectSession}
           onNew={newSession}
         />
-        <main className="main">
+        <main className="relative flex flex-1 flex-col overflow-hidden">
           {tab === "queue" ? (
             <TriageQueue />
           ) : (
             <>
-              <div className="bg-image" />
-              <div className="bg-overlay" />
-              <Chat
-                mode={chatMode}
-                messages={messages}
-                sending={sending}
-                onStarter={(s) => handleSend(s)}
-              />
+              <div className="absolute inset-0 z-0 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat" />
+              <div className="absolute inset-0 z-[1] bg-[var(--overlay)] backdrop-blur-[1px]" />
+              <Chat mode={chatMode} messages={messages} sending={sending} onStarter={handleSend} />
               <Composer mode={chatMode} onSend={handleSend} sending={sending} />
             </>
           )}

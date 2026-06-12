@@ -27,8 +27,8 @@ export default function Composer({ mode, onSend, sending }) {
   }
 
   return (
-    <div className="input-area">
-      <div className="input-box">
+    <div className="relative z-[2] flex flex-shrink-0 flex-col items-center border-t border-line bg-[var(--nav-bg)] px-5 pb-5 pt-4 backdrop-blur-xl">
+      <div className="flex w-full max-w-chat items-end gap-2.5 rounded-2xl border border-line bg-inputbg px-3.5 py-3 transition-shadow focus-within:border-accent focus-within:shadow-[0_0_0_3px_rgba(201,168,106,0.12)]">
         <textarea
           ref={ref}
           rows={1}
@@ -36,14 +36,20 @@ export default function Composer({ mode, onSend, sending }) {
           placeholder={MODE_COPY[mode].placeholder}
           onChange={autoResize}
           onKeyDown={onKeyDown}
+          className="max-h-40 min-h-[24px] flex-1 resize-none bg-transparent text-[14px] leading-normal text-tprimary focus:outline-none outline-none placeholder:text-tmuted"
         />
-        <button className="send-btn" onClick={submit} disabled={sending || !text.trim()} title="Send">
+        <button
+          onClick={submit}
+          disabled={sending || !text.trim()}
+          title="Send"
+          className="flex h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-[9px] bg-[linear-gradient(135deg,var(--accent2),var(--accent))] text-[15px] text-[#1A1511] transition-transform hover:enabled:scale-105 disabled:cursor-not-allowed disabled:opacity-45"
+        >
           ➤
         </button>
       </div>
-      <div className="input-hint">
+      <div className="mt-2 text-center text-[11px] text-tmuted">
         MineAI runs a self-hosted model and can make mistakes. Verify critical operational
-        decisions with your team.
+        decisions.
       </div>
     </div>
   );

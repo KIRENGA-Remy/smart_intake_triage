@@ -1,5 +1,3 @@
-// Triage rows and RAG vectors live in ONE Postgres instance via pgvector.
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["postgresqlExtensions"]
@@ -8,10 +6,10 @@ generator client {
 datasource db {
   provider   = "postgresql"
   url        = env("DATABASE_URL")
+  directUrl  = env("DIRECT_URL")
   extensions = [vector]
 }
 
-// ----------1. Smart Intake Triage ----------
 model Ticket {
   id             String   @id @default(cuid())
   rawText        String   @db.Text
@@ -30,7 +28,6 @@ model Ticket {
   @@map("tickets")
 }
 
-// ---------- 2. Grounded Knowledge Assistant (RAG) ----------
 model Document {
   id        String   @id @default(cuid())
   title     String

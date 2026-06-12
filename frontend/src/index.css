@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="dark"] {
+  --bg-main: #14100d;
+  --bg-sidebar: #1a1511;
+  --bg-input: #221c17;
+  --bg-elevated: #1f1915;
+  --border: #342c25;
+  --border-strong: #463a30;
+  --accent: #c9a86a;
+  --accent2: #9c7b45;
+  --text-primary: #f4f1ec;
+  --text-secondary: #b8aa9b;
+  --text-muted: #7e7264;
+  --user-bubble: linear-gradient(135deg, #6b4423, #8a5a2e);
+  --nav-bg: rgba(20, 16, 13, 0.82);
+  --overlay: rgba(18, 14, 11, 0.74);
+  --card-glass: rgba(31, 25, 21, 0.86);
+}
+
+[data-theme="light"] {
+  --bg-main: #f4f1ec;
+  --bg-sidebar: #fbf9f5;
+  --bg-input: #ffffff;
+  --bg-elevated: #ffffff;
+  --border: #e3dacb;
+  --border-strong: #d6c9b5;
+  --accent: #b8935a;
+  --accent2: #6b4423;
+  --text-primary: #2e1f16;
+  --text-secondary: #6b5d52;
+  --text-muted: #9b8e80;
+  --user-bubble: linear-gradient(135deg, #6b4423, #8a5a2e);
+  --nav-bg: rgba(251, 249, 245, 0.9);
+  --overlay: rgba(244, 241, 236, 0.55);
+  --card-glass: rgba(255, 255, 255, 0.9);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+/* Scrollbars + a11y */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
