@@ -15,7 +15,7 @@ function TriageCard({ t }) {
   const pct = Math.round((t.confidence || 0) * 100);
   return (
     <div className="rounded-[4px_13px_13px_13px] border border-line border-l-[3px] border-l-accent bg-[var(--card-glass)] p-4 backdrop-blur-lg">
-      <div className="mb-3 flex items-center gap-2 text-[12px] font-bold text-accent">⛏ Triage Result</div>
+      <div className="mb-3 flex items-center gap-2 text-[12px] font-bold text-accent">Triage Result</div>
       <div className="mb-3 flex flex-wrap gap-1.5">
         <Badge colors={{ bg: "rgba(201,168,106,0.16)", fg: "var(--accent)" }}>{t.category}</Badge>
         <Badge colors={PRIORITY_COLORS[t.priority]}>{t.priority}</Badge>

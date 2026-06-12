@@ -13,7 +13,7 @@ async function jsonOrThrow(res) {
   return res.json();
 }
 
-/** UC1: classify + store one inbound message. Returns the stored ticket. */
+// UC1: classify + store one inbound message. Returns the stored ticket with its assigned ID
 export async function createTriage(text) {
   const res = await fetch(`${BASE}/api/triage`, {
     method: "POST",
@@ -23,7 +23,7 @@ export async function createTriage(text) {
   return jsonOrThrow(res);
 }
 
-/** UC1: list tickets for the dashboard, with optional filters. */
+// UC1: list tickets for the dashboard, with optional filters
 export async function listTickets({ category, priority } = {}) {
   const params = new URLSearchParams();
   if (category) params.set("category", category);
@@ -33,7 +33,7 @@ export async function listTickets({ category, priority } = {}) {
   return jsonOrThrow(res);
 }
 
-/** UC2: grounded question answering. */
+// UC2: grounded question answering
 export async function ask(question) {
   const res = await fetch(`${BASE}/api/ask`, {
     method: "POST",

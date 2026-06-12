@@ -9,7 +9,7 @@ import { loadSessions, saveSessions, uid } from "./lib/constants.js";
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
-  const [tab, setTab] = useState("intake"); // intake | knowledge | queue
+  const [tab, setTab] = useState("intake");
   const [sessions, setSessions] = useState(() => loadSessions());
   const [currentId, setCurrentId] = useState(null);
   const [sending, setSending] = useState(false);

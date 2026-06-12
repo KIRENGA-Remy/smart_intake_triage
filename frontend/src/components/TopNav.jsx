@@ -6,7 +6,7 @@ const TABS = [
 
 export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
   return (
-    <header className="relative z-[100] flex h-14 flex-shrink-0 items-center justify-between border-b border-line bg-[var(--nav-bg)] px-5 backdrop-blur-lg">
+    <header className="relative z-[100] flex h-20 flex-shrink-0 items-center justify-between border-b border-line bg-[var(--nav-bg)] px-5 backdrop-blur-lg">
       <div className="flex min-w-[120px] flex-shrink-0 items-center gap-2.5 md:min-w-[160px]">
         <a href="#" onClick={(e) => e.preventDefault()} className="no-underline">
           <div className="font-display text-[17px] font-extrabold tracking-[0.3px] text-tprimary">
@@ -35,14 +35,6 @@ export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
       </div>
 
       <div className="flex min-w-[120px] flex-shrink-0 items-center justify-end gap-2.5 md:min-w-[160px]">
-        <button
-          onClick={onToggleTheme}
-          title="Toggle dark / light mode"
-          aria-label="Toggle theme"
-          className="flex h-9 w-9 items-center justify-center rounded-[9px] border border-line bg-transparent text-[15px] text-tsecondary transition-colors hover:border-linestrong hover:bg-inputbg hover:text-tprimary"
-        >
-          {theme === "dark" ? "🌙" : "☀️"}
-        </button>
         <div className="flex items-center gap-2 rounded-full border border-line py-[5px] pl-1.5 pr-3">
           <div className="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--accent2),var(--accent))] text-[11px] font-bold text-white">
             MO

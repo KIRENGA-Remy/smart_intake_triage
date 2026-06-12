@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Semantic tokens -> CSS variables (switch with [data-theme]).
+        // Semantic tokens
         bgmain: "var(--bg-main)",
         sidebar: "var(--bg-sidebar)",
         inputbg: "var(--bg-input)",

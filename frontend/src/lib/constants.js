@@ -1,4 +1,3 @@
-// ===== Backend enums (must match schemas.js) =====
 export const CATEGORIES = [
   "Equipment Failure",
   "Safety Incident",
@@ -14,7 +13,6 @@ export const CATEGORIES = [
 ];
 export const PRIORITIES = ["Low", "Medium", "High", "Urgent"];
 
-// Badge colours { bg, fg } — chosen to read on both dark and light themes.
 export const PRIORITY_COLORS = {
   Urgent: { bg: "rgba(229,72,77,0.16)", fg: "#E5484D" },
   High: { bg: "rgba(217,136,59,0.16)", fg: "#D9883B" },
@@ -27,7 +25,6 @@ export const SENTIMENT_COLORS = {
   Negative: { bg: "rgba(229,72,77,0.16)", fg: "#E5484D" },
 };
 
-// Welcome copy + starter prompts per mode.
 export const MODE_COPY = {
   knowledge: {
     title: "What can I help you mine today?",
@@ -55,7 +52,6 @@ export const MODE_COPY = {
   },
 };
 
-// ===== Session storage (localStorage) =====
 const KEY = "mineai_sessions_v1";
 
 export function uid() {
@@ -74,11 +70,10 @@ export function saveSessions(sessions) {
   try {
     localStorage.setItem(KEY, JSON.stringify(sessions));
   } catch {
-    /* storage full / unavailable — non-fatal */
+    // storage full / unavailable
   }
 }
 
-// Group sessions (sorted newest-first) into Today / Yesterday / Last 7 Days / Older.
 export function groupByDate(sessions) {
   const now = new Date();
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();

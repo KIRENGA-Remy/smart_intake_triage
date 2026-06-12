@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM node:20-bookworm-slim
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     npm \
     postgresql-client \
+    zstd \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Ollama
