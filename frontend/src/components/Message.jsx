@@ -128,7 +128,7 @@ export default function Message({ m }) {
               {m.text}
             </div>
           )}
-          <div className="mt-[5px] text-[11px] text-tmuted">MineAI</div>
+          <div className="mt-[5px] text-[11px] text-tmuted">TriageDesk</div>
         </div>
       </div>
     </div>

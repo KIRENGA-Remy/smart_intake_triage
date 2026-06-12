@@ -28,7 +28,6 @@ Two AI features built on **one self-hosted, open-source LLM** — **no hosted or
 | --- | --- |
 | GitHub repository + this README | this repo |
 | 5-minute screen recording | _[add your Loom/video link here]_ |
-| 1-page decision memo | [`DECISION_MEMO`](https://github.com/KIRENGA-Remy/smart_intake_triage/blob/main/DECISION_MEMO) |
 | deployed link | https://smart-intake-triage.vercel.app |
 
 ---
@@ -223,7 +222,7 @@ Out-of-scope questions return `"grounded": false` with the not-in-knowledge-base
 
 ## Design decisions (the deliberately under-specified points)
 
-Full reasoning is in [`DECISION_MEMO`](https://github.com/KIRENGA-Remy/smart_intake_triage/blob/main/DECISION_MEMO); in brief:
+in brief:
 
 - **Triage schema (ambiguous point #1).** Categories and modules are deliberately shaped to a
   **mining operator's real support taxonomy** (Equipment Failure, Safety Incident, Production

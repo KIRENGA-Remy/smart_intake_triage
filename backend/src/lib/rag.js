@@ -6,9 +6,7 @@ const TOP_K = Number(process.env.RAG_TOP_K || "4");
 const CHUNK_SIZE = Number(process.env.RAG_CHUNK_SIZE || "180");
 const CHUNK_OVERLAP = Number(process.env.RAG_CHUNK_OVERLAP || "40");
 
-/**
- * Word-based chunker with sentence boundary awareness
- */
+// Word-based chunker with sentence boundary awareness
 function chunkText(text, chunkWords = CHUNK_SIZE, overlapWords = CHUNK_OVERLAP) {
   if (!text || typeof text !== "string") {
     throw new Error("Invalid text input for chunking");

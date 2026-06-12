@@ -59,11 +59,9 @@ async function chatJSON({ system, user, schema, temperature = 0 }) {
   }
 }
 
-/**
- * Chat with text output (freeform responses)
- */
+
+// Chat with text output
 async function chatText({ system, user, temperature = 0.1 }) {
-  // Validate inputs
   if (!system || !user) {
     throw new Error("Both 'system' and 'user' prompts are required");
   }
@@ -105,18 +103,12 @@ async function chatText({ system, user, temperature = 0.1 }) {
   }
 }
 
-/**
- * Generate embeddings for text
- * @param {string|string[]} inputs - Single string or array of strings
- * @returns {Promise<number[][]>} Array of embedding vectors
- */
+// Generate embeddings for text (single string or array of strings)
 async function embed(inputs) {
-  // Validate input
   if (!inputs) {
     throw new Error("Input text is required for embedding");
   }
 
-  // Normalize to array
   const inputArray = Array.isArray(inputs) ? inputs : [inputs];
 
   try {
@@ -142,7 +134,6 @@ async function embed(inputs) {
 
     const data = await res.json();
     
-    // Return single embedding if input was single string
     if (!Array.isArray(inputs)) {
       return data.embeddings[0];
     }

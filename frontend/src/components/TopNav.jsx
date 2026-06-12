@@ -10,7 +10,7 @@ export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
       <div className="flex min-w-[120px] flex-shrink-0 items-center gap-2.5 md:min-w-[160px]">
         <a href="#" onClick={(e) => e.preventDefault()} className="no-underline">
           <div className="font-display text-[17px] font-extrabold tracking-[0.3px] text-tprimary">
-            Mine<span className="text-accent">AI</span>
+            Triage<span className="text-accent">Desk</span>
           </div>
         </a>
       </div>

@@ -48,7 +48,7 @@ export default function Composer({ mode, onSend, sending }) {
         </button>
       </div>
       <div className="mt-2 text-center text-[11px] text-tmuted">
-        MineAI runs a self-hosted model and can make mistakes. Verify critical operational
+        TriageDesk runs a self-hosted model and can make mistakes. Verify critical operational
         decisions.
       </div>
     </div>
