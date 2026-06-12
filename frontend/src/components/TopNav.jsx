@@ -6,7 +6,7 @@ const TABS = [
 
 export default function TopNav({ tab, onTab, theme, onToggleTheme }) {
   return (
-    <header className="relative z-[100] flex h-20 flex-shrink-0 items-center justify-between border-b border-line bg-[var(--nav-bg)] px-5 backdrop-blur-lg">
+    <header className="relative z-[100] flex h-14 flex-shrink-0 items-center justify-between border-b border-line bg-[var(--nav-bg)] px-5 backdrop-blur-lg">
       <div className="flex min-w-[120px] flex-shrink-0 items-center gap-2.5 md:min-w-[160px]">
         <a href="#" onClick={(e) => e.preventDefault()} className="no-underline">
           <div className="font-display text-[17px] font-extrabold tracking-[0.3px] text-tprimary">
