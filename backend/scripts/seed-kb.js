@@ -7,11 +7,14 @@ const DOCS = [
   {
     title: "Generator Maintenance & Operations",
     source: "generator-maintenance.md",
-    text: `The MineTech Generator Module provides comprehensive monitoring and maintenance tracking for all on-site power generators. Generators require oil changes every 250 operating hours or monthly, whichever comes first. Fuel filters must be replaced every 500 hours. Coolant levels should be checked daily before startup. Battery terminals must be cleaned weekly to prevent corrosion.
-
-  Emergency generators automatically test every Tuesday at 10:00 AM for 30 minutes. If a test fails, the system sends an immediate alert to maintenance supervisors. Critical alarms include low oil pressure (below 25 PSI), high coolant temperature (above 205°F), and overspeed condition (above 1800 RPM).
-
-  Fuel consumption tracking shows diesel usage averages 18 gallons per hour under full load, 12 gallons per hour at half load. The system automatically schedules fuel deliveries when tank levels drop below 25%. All maintenance activities are logged with timestamps and technician signatures, creating a complete service history accessible from the dashboard.`,
+    text: `The MineTech Generator Module provides comprehensive monitoring and maintenance tracking for all on-site power generators. 
+    Generators require oil changes every 250 operating hours or monthly, whichever comes first. Fuel filters must be replaced every 500 hours. Coolant levels should be checked daily before startup. Battery terminals must be cleaned weekly to prevent corrosion.
+    Emergency generators automatically test every Tuesday at 10:00 AM for 30 minutes. 
+    If a test fails, the system sends an immediate alert to maintenance supervisors. Critical alarms include low oil pressure (below 25 PSI), 
+    high coolant temperature (above 205°F), and overspeed condition (above 1800 RPM).
+    Fuel consumption tracking shows diesel usage averages 18 gallons per hour under full load, 12 gallons per hour at half load. 
+    The system automatically schedules fuel deliveries when tank levels drop below 25%. 
+    All maintenance activities are logged with timestamps and technician signatures, creating a complete service history accessible from the dashboard.`,
   },
   {
     title: "Payroll Module Overview",
